@@ -33,6 +33,13 @@ function listFile(){
     }
     lists.forEach((l)=>console.log(`-${l}`));
 }
+function infoFile(){
+    if(!fs.existsSync(filePath)){
+        return console.log("file does not exist");
+    }
+    const state = fs.statSync(filePath);
+    console.log(state);
+}
 switch(command){
     case 'create':
         createFile();
