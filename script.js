@@ -8,6 +8,19 @@ const command = process.argv[2];
 const filename = process.argv[3];
 const content = process.argv[4];
 const filePath = filename?path.join(baseDir,filename):null;
+function createFile(){
+    if(!filename || !content){
+        return console.log("file name is missing");
+    }
+    fs.writeFileSync(filePath,content+'\n');
+    console.log("file written successfuly");
+}
+function readFile(){
+    if(!fs.existsSync(filePath)){
+        return console.log("file does not exist");
+    }
+    const data = fs.readFileSync()
+}
 
 switch(command){
     case 'create':
