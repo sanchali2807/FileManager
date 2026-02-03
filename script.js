@@ -19,12 +19,23 @@ function readFile(){
     if(!fs.existsSync(filePath)){
         return console.log("file does not exist");
     }
-    const data = fs.readFileSync()
+    const data = fs.readFileSync(filePath,'utf-8');
+    // const data = fs.readFileSync(filePath);
+    console.log(data);
 }
-
+function listFile(){
+    if(!fs.existsSync(baseDir)){
+        return console.log("directory does not exist");
+    }
+    const lists = fs.readdirSync(baseDir);
+    if(lists.length === 0){
+        console.log("directory is empty");
+    }
+    lists.forEach((l)=>console.log(`-${l}`));
+}
 switch(command){
     case 'create':
-        createFilter();
+        createFile();
         break;
         case 'read':
             readFile();
