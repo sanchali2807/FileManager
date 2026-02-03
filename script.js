@@ -8,3 +8,24 @@ const command = process.argv[2];
 const filename = process.argv[3];
 const content = process.argv[4];
 const filePath = filename?path.join(baseDir,filename):null;
+
+switch(command){
+    case 'create':
+        createFilter();
+        break;
+        case 'read':
+            readFile();
+            break;
+            case 'append':
+                appendFile();
+                break;
+                case 'list':
+                    listFile();
+                    break;
+                    case 'delete':
+                        deleteFile();
+                        break;
+                        case 'info' :
+                            infoFile();
+                            break;
+}
